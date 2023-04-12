@@ -1,0 +1,93 @@
+import 'package:carltutorial/blog_post.dart';
+import 'package:carltutorial/forms.dart';
+import 'package:carltutorial/simple_design.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Carl Tutorial',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Carl Tutorial"),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.all(30),
+            child: Column(
+              children: [
+                //for simple design
+                MaterialButton(
+                  onPressed: () {
+                    var route = MaterialPageRoute(
+                      builder: (context) => const SimpleDesign(),
+                    );
+                    Navigator.push(context, route);
+                  },
+                  color: Colors.blue,
+                  height: 50,
+                  shape: const StadiumBorder(),
+                  child: const Text("Simple Design"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                //for blogpost
+                MaterialButton(
+                  onPressed: () {
+                    var route = MaterialPageRoute(
+                      builder: (context) => const BlogPost(),
+                    );
+                    Navigator.push(context, route);
+                  },
+                  color: Colors.blue,
+                  height: 50,
+                  shape: const StadiumBorder(),
+                  child: const Text("Blog Post"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                //forms
+                MaterialButton(
+                  onPressed: () {
+                    var route = MaterialPageRoute(
+                      builder: (context) => const Forms(),
+                    );
+                    Navigator.push(context, route);
+                  },
+                  color: Colors.blue,
+                  height: 50,
+                  shape: const StadiumBorder(),
+                  child: const Text("Forms"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+}
