@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({super.key});
+  Map<String, dynamic> userDetails;
+  DashBoard({super.key, required this.userDetails});
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -12,46 +13,46 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("DashBoard"),
+        title: Text(widget.userDetails['username'] + " 's Profile"),
       ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(30),
           height: 500,
           width: 500,
-          child: const Column(
+          child: Column(
             children: [
               Row(
                 children: [
-                  Text("UserName:"),
-                  SizedBox(
+                  const Text("UserName:"),
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("PLACEHOLDER")
+                  Text(widget.userDetails['username'])
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 children: [
-                  Text("Password:"),
-                  SizedBox(
+                  const Text("Password:"),
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("PLACEHOLDER")
+                  Text(widget.userDetails['password'])
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 children: [
-                  Text("Email:"),
-                  SizedBox(
+                  const Text("Email:"),
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text("PLACEHOLDER")
+                  Text(widget.userDetails['email'])
                 ],
               ),
             ],

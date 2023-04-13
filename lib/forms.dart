@@ -13,6 +13,32 @@ class _FormsState extends State<Forms> {
   bool? isChecked = false;
   int? gender = 0;
   GlobalKey<FormState> authKey = GlobalKey<FormState>();
+  bool showPassword = false;
+
+  List<String> qualifications = ["HND", "OND", "DEGREE", "MASTERS", "PHD"];
+  var dropdown = "HND";
+
+  TextEditingController usernameCtrl = TextEditingController();
+  TextEditingController passwordCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    usernameCtrl.dispose();
+    passwordCtrl.dispose();
+    emailCtrl.dispose();
+  }
+
+  void switchPassword() {
+    // if (showPassword) {
+    //   showPassword = false;
+    // } else {
+    //   showPassword = true;
+    // }
+    showPassword = !showPassword;
+    setState(() {}); //notifies the state of a change...
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +56,35 @@ class _FormsState extends State<Forms> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: DropdownButton(
+                    items: qualifications.map((qualifications) {
+                      return DropdownMenuItem(
+                        value: qualifications,
+                        child: Text(qualifications),
+                      );
+                    }).toList(),
+                    isExpanded: true,
+                    onChanged: (value) {
+                      setState(() {
+                        dropdown = value!;
+                      });
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
                 TextFormField(
+                  controller: usernameCtrl,
                   decoration: InputDecoration(
                     label: const Text("Username"),
                     hintText: "Enter Your Username",
@@ -52,6 +106,8 @@ class _FormsState extends State<Forms> {
                   height: 20,
                 ),
                 TextFormField(
+                  controller: passwordCtrl,
+                  obscureText: !showPassword,
                   decoration: InputDecoration(
                     label: const Text("Password"),
                     hintText: "Enter Your Password",
@@ -61,7 +117,14 @@ class _FormsState extends State<Forms> {
                     filled: true,
                     fillColor: Colors.brown.shade200,
                     prefixIcon: const Icon(Icons.lock),
-                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        switchPassword();
+                      },
+                      icon: showPassword
+                          ? const Icon(Icons.remove_red_eye)
+                          : const Icon(Icons.visibility_off),
+                    ),
                   ),
                   validator: (value) {
                     if (value!.length < 6) {
@@ -74,6 +137,7 @@ class _FormsState extends State<Forms> {
                   height: 20,
                 ),
                 TextFormField(
+                  controller: emailCtrl,
                   decoration: InputDecoration(
                     label: const Text("Email"),
                     hintText: "Enter Your Email",
@@ -201,8 +265,14 @@ class _FormsState extends State<Forms> {
                   onPressed: () {
                     if (authKey.currentState!.validate()) {
                       authKey.currentState!.save();
+                      Map<String, dynamic> users = {};
+                      users["username"] = usernameCtrl.text;
+                      users["password"] = passwordCtrl.text;
+                      users["email"] = emailCtrl.text;
                       var route = MaterialPageRoute(
-                        builder: (context) => const DashBoard(),
+                        builder: (context) => DashBoard(
+                          userDetails: users,
+                        ),
                       );
                       Navigator.push(context, route);
                     }
