@@ -1,5 +1,6 @@
 import 'package:carltutorial/blog_post.dart';
 import 'package:carltutorial/forms.dart';
+import 'package:carltutorial/listview_builder.dart';
 import 'package:carltutorial/simple_design.dart';
 import 'package:flutter/material.dart';
 
@@ -81,6 +82,22 @@ class Home extends StatelessWidget {
                   height: 50,
                   shape: const StadiumBorder(),
                   child: const Text("Forms"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                //ListViewBuilder
+                MaterialButton(
+                  onPressed: () {
+                    var route = MaterialPageRoute(
+                      builder: (context) => const ListViewBuilder(),
+                    );
+                    Navigator.push(context, route);
+                  },
+                  color: Colors.blue,
+                  height: 50,
+                  shape: const StadiumBorder(),
+                  child: const Text("ListViewBuilder"),
                 ),
                 const SizedBox(
                   height: 10,
