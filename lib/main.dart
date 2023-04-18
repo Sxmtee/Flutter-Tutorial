@@ -1,3 +1,4 @@
+import 'package:carltutorial/alert_dialog.dart';
 import 'package:carltutorial/blog_post.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
@@ -30,81 +31,98 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Carl Tutorial"),
-        ),
-        body: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.all(30),
-            child: Column(
-              children: [
-                //for simple design
-                MaterialButton(
-                  onPressed: () {
-                    var route = MaterialPageRoute(
-                      builder: (context) => const SimpleDesign(),
-                    );
-                    Navigator.push(context, route);
-                  },
-                  color: Colors.blue,
-                  height: 50,
-                  shape: const StadiumBorder(),
-                  child: const Text("Simple Design"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                //for blogpost
-                MaterialButton(
-                  onPressed: () {
-                    var route = MaterialPageRoute(
-                      builder: (context) => const BlogPost(),
-                    );
-                    Navigator.push(context, route);
-                  },
-                  color: Colors.blue,
-                  height: 50,
-                  shape: const StadiumBorder(),
-                  child: const Text("Blog Post"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                //forms
-                MaterialButton(
-                  onPressed: () {
-                    var route = MaterialPageRoute(
-                      builder: (context) => const Forms(),
-                    );
-                    Navigator.push(context, route);
-                  },
-                  color: Colors.blue,
-                  height: 50,
-                  shape: const StadiumBorder(),
-                  child: const Text("Forms"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                //ListViewBuilder
-                MaterialButton(
-                  onPressed: () {
-                    var route = MaterialPageRoute(
-                      builder: (context) => const ListViewBuilder(),
-                    );
-                    Navigator.push(context, route);
-                  },
-                  color: Colors.blue,
-                  height: 50,
-                  shape: const StadiumBorder(),
-                  child: const Text("ListViewBuilder"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
+      appBar: AppBar(
+        title: const Text("Carl Tutorial"),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.all(30),
+          child: Column(
+            children: [
+              //for simple design
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const SimpleDesign(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Simple Design"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //for blogpost
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const BlogPost(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Blog Post"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //forms
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const Forms(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Forms"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //ListViewBuilder
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ListViewBuilder(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("ListViewBuilder"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //for Alertdialog
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const NotifDialog(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Alert Dialog"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
