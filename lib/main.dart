@@ -3,6 +3,7 @@ import 'package:carltutorial/blog_post.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
 import 'package:carltutorial/simple_design.dart';
+import 'package:carltutorial/tabbed_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -115,6 +116,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("Alert Dialog"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //TabbedViewClass
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const TabbedViewClass(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Tabbed View"),
               ),
               const SizedBox(
                 height: 10,
