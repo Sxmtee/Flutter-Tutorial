@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatefulWidget {
-  Map<String, dynamic> userDetails;
-  DashBoard({super.key, required this.userDetails});
+  final Map<String, dynamic> userDetails;
+  const DashBoard({super.key, required this.userDetails});
 
   @override
   State<DashBoard> createState() => _DashBoardState();
