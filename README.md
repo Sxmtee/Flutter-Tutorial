@@ -8,4 +8,6 @@ Tutorials on dart programming language & important widgets in flutter for newbie
 * Containers, Columns & Rows (Simple Design)
 * Forms
 * ListView Builder
+* DefaultTabController
+* WebViewWidget
 
