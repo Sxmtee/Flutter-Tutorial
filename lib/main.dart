@@ -1,5 +1,6 @@
 import 'package:carltutorial/alert_dialog.dart';
 import 'package:carltutorial/blog_post.dart';
+import 'package:carltutorial/carousel_class.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
 import 'package:carltutorial/simple_design.dart';
@@ -159,6 +160,22 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   var route = MaterialPageRoute(
                     builder: (context) => const WebViewPractical(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Web View Practical"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //Carousel Slider
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const CarouselClass(),
                   );
                   Navigator.push(context, route);
                 },

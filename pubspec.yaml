@@ -37,6 +37,7 @@ dependencies:
   email_validator: ^2.1.17
   webview_flutter: ^4.2.0
   regexpattern: ^2.1.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
