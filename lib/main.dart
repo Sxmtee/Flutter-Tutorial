@@ -182,7 +182,7 @@ class Home extends StatelessWidget {
                 color: Colors.blue,
                 height: 50,
                 shape: const StadiumBorder(),
-                child: const Text("Web View Practical"),
+                child: const Text("Carousel Class"),
               ),
               const SizedBox(
                 height: 10,

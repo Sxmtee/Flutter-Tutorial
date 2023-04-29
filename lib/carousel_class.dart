@@ -42,6 +42,7 @@ class _CarouselClassState extends State<CarouselClass> {
           initialPage: 0,
           height: 500,
           enlargeCenterPage: true,
+          autoPlay: true,
           autoPlayInterval: const Duration(seconds: 4),
         ),
       ),
