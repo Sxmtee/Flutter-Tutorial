@@ -1,3 +1,4 @@
+import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -25,26 +26,37 @@ class _CarouselClassState extends State<CarouselClass> {
       appBar: AppBar(
         title: const Text("Carousel Slider"),
       ),
-      body: CarouselSlider(
-        carouselController: carouselController,
-        items: imgList.map((images) {
-          return Container(
-            // height: 500,
-            width: MediaQuery.of(context).size.width,
-            margin: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Image.network(
-              images,
-              fit: BoxFit.fill,
+      body: Column(
+        children: [
+          CarouselSlider(
+            carouselController: carouselController,
+            items: imgList.map((images) {
+              return Container(
+                // height: 500,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                child: Image.network(
+                  images,
+                  fit: BoxFit.fill,
+                ),
+              );
+            }).toList(),
+            options: CarouselOptions(
+              initialPage: 0,
+              height: 500,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 4),
             ),
-          );
-        }).toList(),
-        options: CarouselOptions(
-          initialPage: 0,
-          height: 500,
-          enlargeCenterPage: true,
-          autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 4),
-        ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          CarouselIndicator(
+            count: imgList.length,
+            index: null,
+          ),
+        ],
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:carltutorial/alert_dialog.dart';
 import 'package:carltutorial/blog_post.dart';
+import 'package:carltutorial/bottomnavclass.dart';
 import 'package:carltutorial/carousel_class.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
@@ -183,6 +184,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("Carousel Class"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //bottomnav
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const BottomNavClass(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Bottom Nav Class"),
               ),
               const SizedBox(
                 height: 10,
