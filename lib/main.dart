@@ -1,10 +1,12 @@
 import 'package:carltutorial/alert_dialog.dart';
+import 'package:carltutorial/api_fetch.dart';
 import 'package:carltutorial/blog_post.dart';
 import 'package:carltutorial/bottomnavclass.dart';
 import 'package:carltutorial/carousel_class.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
 import 'package:carltutorial/simple_design.dart';
+import 'package:carltutorial/splashscreen.dart';
 import 'package:carltutorial/tabbed_view.dart';
 import 'package:carltutorial/webview_class.dart';
 import 'package:carltutorial/webview_practical.dart';
@@ -200,6 +202,38 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("Bottom Nav Class"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //Splashscreen
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const SplashScreen(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Splashscreen class"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //ApiFetch
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ApiFetch(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("API Fetch"),
               ),
               const SizedBox(
                 height: 10,

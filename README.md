@@ -11,13 +11,14 @@ Tutorials on dart programming language & important widgets in flutter for newbie
 - ListView Builder
 - DefaultTabController
 - WebViewWidget
+- WebViewWidget Practical
 - Carousel Slider
-- SplashScreen
 - Bottom Navigation Bar
-- SharedPreferences
+- SplashScreen
 - Api Fetch
 - Api Post
 - Models
+- SharedPreferences
 - Flutter SQFlite
 - Firebase
 - Build a News App
