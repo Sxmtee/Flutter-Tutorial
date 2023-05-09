@@ -1,5 +1,6 @@
 import 'package:carltutorial/alert_dialog.dart';
 import 'package:carltutorial/api_fetch.dart';
+import 'package:carltutorial/api_post.dart';
 import 'package:carltutorial/blog_post.dart';
 import 'package:carltutorial/bottomnavclass.dart';
 import 'package:carltutorial/carousel_class.dart';
@@ -234,6 +235,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("API Fetch"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //ApiPost
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ApiPost(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("API Post"),
               ),
               const SizedBox(
                 height: 10,
