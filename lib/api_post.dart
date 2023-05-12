@@ -28,9 +28,6 @@ class _ApiPostState extends State<ApiPost> {
     if (request.statusCode == 201) {
       var response = jsonDecode(request.body);
       print(response);
-      setState(() {
-        isLoading = false;
-      });
     } else {
       print(request.statusCode);
       print("ERROR OCCURED");

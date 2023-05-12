@@ -6,6 +6,7 @@ import 'package:carltutorial/bottomnavclass.dart';
 import 'package:carltutorial/carousel_class.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
+import 'package:carltutorial/modelapi.dart';
 import 'package:carltutorial/simple_design.dart';
 import 'package:carltutorial/splashscreen.dart';
 import 'package:carltutorial/tabbed_view.dart';
@@ -251,6 +252,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("API Post"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //ModelApi
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ModelApi(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Model Api"),
               ),
               const SizedBox(
                 height: 10,
