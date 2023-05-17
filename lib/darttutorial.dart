@@ -177,5 +177,63 @@
   // do{
   //   n++;
   //   print(n);
-  // }while(n < 100);  
+  // }while(n < 100);
+
+/*
+ASSIGNMENT
+Loop the multiplication table from 1 to 12
+*/
+
+/*
+  for(int i = 1; i <= 12; i++){
+    for (int y = 1; y <= 12; y++) {
+      var ans = y * 1;
+      print("$i * $y = $ans");
+    }
+  }
+*/
+
+//Lists []
+  
+ /*
+ In Flutter, lists are a collection of ordered objects of the same type. They are similar to arrays in other programming languages. Lists are used 
+ to store and manipulate multiple values in a single variable.
+ */
+  
+// List<String> names = ["Sylva", "Somtee", "Amos", "Victor"];
+// List<int> number = [3, 6, 7, 4, 6, 8];
+// List<dynamic> both = ["Saint", 3, 6, "King", "queen", 4];
+  
+// for(int i = 0; i < names.length; i++) {
+//   print(names[i]);
+// }
+  
+// names.forEach((i){
+//   print(i);
+// });
+  
+//   for(var length in names) {
+//     print(length);
+//   }
+
+  
+//   var jss1 = [["Ezinne", "Sylva"], ["Somtee", "Victor"], 
+              
+//                ["Austine", "Samuel"], ["Vincent", "Toochi"]];
+  
+//  print(jss1[0][0]);
+  
+    /*
+    ASSIGNMENT
+    print out all the names in jss1 in ascending order
+    */
+
+//  var myList = [];
+ 
+//  myList.add("Somtee");
+//   myList.add("Dennis");
+//   print(myList);
+//  myList.removeAt(0);
+//   print(myList);
+
 // }
