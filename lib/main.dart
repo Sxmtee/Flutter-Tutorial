@@ -7,14 +7,18 @@ import 'package:carltutorial/carousel_class.dart';
 import 'package:carltutorial/forms.dart';
 import 'package:carltutorial/listview_builder.dart';
 import 'package:carltutorial/modelapi.dart';
+import 'package:carltutorial/shared_preference.dart';
 import 'package:carltutorial/simple_design.dart';
 import 'package:carltutorial/splashscreen.dart';
 import 'package:carltutorial/tabbed_view.dart';
+import 'package:carltutorial/user_preference.dart';
 import 'package:carltutorial/webview_class.dart';
 import 'package:carltutorial/webview_practical.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SimplePreferences.init();
   runApp(const MyApp());
 }
 
@@ -268,6 +272,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("Model Api"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //SharedPreference
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const UserPreference(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Shared Preference"),
               ),
               const SizedBox(
                 height: 10,
