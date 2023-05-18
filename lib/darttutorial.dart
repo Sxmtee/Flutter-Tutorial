@@ -236,4 +236,57 @@ Loop the multiplication table from 1 to 12
 //  myList.removeAt(0);
 //   print(myList);
 
+  /*
+  INTRO TO MAPS
+  In Flutter, maps refer to the data structure used to 
+  store key-value pairs. It is similar to the concept 
+  of an associative array in other 
+  programming languages.
+  Flutter provides a built-in class called Map for 
+  working with maps.
+  */
+  
+//   Map<String, dynamic> jss2 = {
+//     "name": "Amos",
+//     "gender": "Male",
+//     "class": "Jss2",
+//     "level": 1,
+//   };
+ 
+//   print(jss2["name"]);
+//   print(jss2["gender"]);
+  
+//   jss2.forEach((key, value){
+//     print(key);
+//     print(value);
+//   });
+  
+//   Map<String, dynamic> bio = {
+//     "profile": {"name": "Amos",  "gender": "Male"},
+//     "education": {"secondary": "Airforce", "tertiary": "Unn"},
+//   };
+  
+//   print(bio["profile"]["name"]);
+//   print(bio["education"]["tertiary"]);
+  
+//  List<dynamic> students = [
+//    {"Username": "Somtee", "Class": "SS3", "Password": 1234},
+//    {"Username": "Sylva", "Class": "SS2", "Password": 5678},
+//    {"Username": "Davies", "Class": "SS1", "Password": 9012},
+//    {"Username": "Carl", "Class": "Jss3", "Password": 2345},
+//  ];
+ 
+// for(int i = 0; i < students.length; i++) {
+//   print(students[i]);
+// } 
+
+//   var myMap = {};
+//   myMap["name"] = "somtee";
+//   myMap["gender"] = "Male";
+  
+//   print(myMap);
+  
+//   myMap.remove("name");
+//   print(myMap);
+
 // }
