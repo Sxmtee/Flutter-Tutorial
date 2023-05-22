@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:carltutorial/carousel_class.dart';
+import 'package:carltutorial/Flutter-Widgets/carousel_class.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

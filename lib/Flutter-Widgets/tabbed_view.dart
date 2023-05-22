@@ -1,6 +1,6 @@
-import 'package:carltutorial/alert_dialog.dart';
-import 'package:carltutorial/blog_post.dart';
-import 'package:carltutorial/simple_design.dart';
+import 'package:carltutorial/Flutter-Widgets/alert_dialog.dart';
+import 'package:carltutorial/Flutter-Widgets/blog_post.dart';
+import 'package:carltutorial/Flutter-Widgets/simple_design.dart';
 import 'package:flutter/material.dart';
 
 class TabbedViewClass extends StatefulWidget {

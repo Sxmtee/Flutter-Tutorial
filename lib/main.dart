@@ -1,19 +1,19 @@
-import 'package:carltutorial/alert_dialog.dart';
-import 'package:carltutorial/api_fetch.dart';
-import 'package:carltutorial/api_post.dart';
-import 'package:carltutorial/blog_post.dart';
-import 'package:carltutorial/bottomnavclass.dart';
-import 'package:carltutorial/carousel_class.dart';
-import 'package:carltutorial/forms.dart';
-import 'package:carltutorial/listview_builder.dart';
-import 'package:carltutorial/modelapi.dart';
-import 'package:carltutorial/shared_preference.dart';
-import 'package:carltutorial/simple_design.dart';
-import 'package:carltutorial/splashscreen.dart';
-import 'package:carltutorial/tabbed_view.dart';
-import 'package:carltutorial/user_preference.dart';
-import 'package:carltutorial/webview_class.dart';
-import 'package:carltutorial/webview_practical.dart';
+import 'package:carltutorial/Flutter-Widgets/alert_dialog.dart';
+import 'package:carltutorial/Flutter-Widgets/api_fetch.dart';
+import 'package:carltutorial/Flutter-Widgets/api_post.dart';
+import 'package:carltutorial/Flutter-Widgets/blog_post.dart';
+import 'package:carltutorial/Flutter-Widgets/bottomnavclass.dart';
+import 'package:carltutorial/Flutter-Widgets/carousel_class.dart';
+import 'package:carltutorial/Flutter-Widgets/forms.dart';
+import 'package:carltutorial/Flutter-Widgets/listview_builder.dart';
+import 'package:carltutorial/Flutter-Widgets/modelapi.dart';
+import 'package:carltutorial/Flutter-Widgets/shared_preference.dart';
+import 'package:carltutorial/Flutter-Widgets/simple_design.dart';
+import 'package:carltutorial/Flutter-Widgets/splashscreen.dart';
+import 'package:carltutorial/Flutter-Widgets/tabbed_view.dart';
+import 'package:carltutorial/Flutter-Widgets/user_preference.dart';
+import 'package:carltutorial/Flutter-Widgets/webview_class.dart';
+import 'package:carltutorial/Flutter-Widgets/webview_practical.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {

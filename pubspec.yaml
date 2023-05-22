@@ -41,6 +41,7 @@ dependencies:
   carousel_indicator: ^1.0.6
   http: ^0.13.6
   shared_preferences: ^2.1.1
+  sqflite: ^2.2.8+4
 
 dev_dependencies:
   flutter_test:

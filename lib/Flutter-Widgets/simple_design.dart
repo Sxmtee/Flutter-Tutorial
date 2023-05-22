@@ -25,12 +25,13 @@ class SimpleDesign extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.red,
-                  child: const Center(
-                    child: Text("1"),
-                  )),
+                height: 50,
+                width: 50,
+                color: Colors.red,
+                child: const Center(
+                  child: Text("1"),
+                ),
+              ),
               const SizedBox(
                 height: 50,
               ),

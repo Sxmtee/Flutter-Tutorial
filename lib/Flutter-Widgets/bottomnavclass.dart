@@ -1,6 +1,6 @@
-import 'package:carltutorial/carousel_class.dart';
-import 'package:carltutorial/forms.dart';
-import 'package:carltutorial/listview_builder.dart';
+import 'package:carltutorial/Flutter-Widgets/carousel_class.dart';
+import 'package:carltutorial/Flutter-Widgets/forms.dart';
+import 'package:carltutorial/Flutter-Widgets/listview_builder.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavClass extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:carltutorial/dashboard.dart';
+import 'package:carltutorial/Flutter-Widgets/dashboard.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
