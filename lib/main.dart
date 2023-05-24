@@ -14,11 +14,14 @@ import 'package:carltutorial/Flutter-Widgets/tabbed_view.dart';
 import 'package:carltutorial/Flutter-Widgets/user_preference.dart';
 import 'package:carltutorial/Flutter-Widgets/webview_class.dart';
 import 'package:carltutorial/Flutter-Widgets/webview_practical.dart';
+import 'package:carltutorial/Sqflite-ToDo/db_helper.dart';
+import 'package:carltutorial/Sqflite-ToDo/list.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SimplePreferences.init();
+  await DataBaseHelper.instance.database;
   runApp(const MyApp());
 }
 
@@ -288,6 +291,22 @@ class Home extends StatelessWidget {
                 height: 50,
                 shape: const StadiumBorder(),
                 child: const Text("Shared Preference"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //Sqflite-ToDo
+              MaterialButton(
+                onPressed: () {
+                  var route = MaterialPageRoute(
+                    builder: (context) => const ListScreen(),
+                  );
+                  Navigator.push(context, route);
+                },
+                color: Colors.blue,
+                height: 50,
+                shape: const StadiumBorder(),
+                child: const Text("Sqflite-ToDo"),
               ),
               const SizedBox(
                 height: 10,

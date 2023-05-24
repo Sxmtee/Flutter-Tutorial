@@ -20,5 +20,14 @@ Tutorials on dart programming language & important widgets in flutter for newbie
 - Models
 - SharedPreferences
 - Flutter SQFlite
+  - Setup Sqflite
+  - Open Database
+  - Create Table
+  - Perform CRUD
 - Firebase
+  - Create Firebase Account
+  - Setup New Project
+  - Setup Auth
+  - Setup Database
+  - Perform CRUD
 - Build a News App

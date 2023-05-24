@@ -226,6 +226,12 @@ Loop the multiplication table from 1 to 12
     /*
     ASSIGNMENT
     print out all the names in jss1 in ascending order
+
+    for (int i = 0; i < jss1.length - 2; i++) {
+  jss1.forEach((jss1){
+    print(jss1[i]);
+  });
+ }
     */
 
 //  var myList = [];
@@ -288,5 +294,11 @@ Loop the multiplication table from 1 to 12
   
 //   myMap.remove("name");
 //   print(myMap);
+
+ //Assignment
+  /*
+  Remove more than one key from the map above
+  */
+
 
 // }
