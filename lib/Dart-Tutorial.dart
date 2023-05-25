@@ -196,7 +196,8 @@ Loop the multiplication table from 1 to 12
 //Lists []
   
  /*
- In Flutter, lists are a collection of ordered objects of the same type. They are similar to arrays in other programming languages. Lists are used 
+ In Flutter, lists are a collection of ordered objects of the same type. 
+ They are similar to arrays in other programming languages. Lists are used 
  to store and manipulate multiple values in a single variable.
  */
   
@@ -227,11 +228,11 @@ Loop the multiplication table from 1 to 12
     ASSIGNMENT
     print out all the names in jss1 in ascending order
 
-    for (int i = 0; i < jss1.length - 2; i++) {
-  jss1.forEach((jss1){
-    print(jss1[i]);
-  });
- }
+    for (var name in jss1){
+      for (var element in name) {
+        print (element);
+      }
+    }
     */
 
 //  var myList = [];
@@ -300,5 +301,69 @@ Loop the multiplication table from 1 to 12
   Remove more than one key from the map above
   */
 
+    //STRING METHODS//
+  
+//   String name = "Ugonnaya Somto";
+  
+//   print(name.toUpperCase());
+//   print(name.toLowerCase());
+  
+//   print(name.substring(3,8));
+//   print(name[1]);
+  
+//   String password = "   12345   ";
+  
+//   print(password);
+//   print(password.trim());
+//   if(password.trim().length < 8){
+//     print(true);
+//   } else {
+//     print(false);
+//   }
 
+//   String name = "Obi is a big Man";
+  
+//   if(name.startsWith("U")){
+//     print(true);
+//   } else {
+//     print ("No");
+//   }
+  
+//   if(name.endsWith("Man")){
+//     print(true);
+//   } else {
+//     print(false);
+//   }
+  
+//   print(name.replaceAll(" ","-"));
+  
+//   var email = "somtoo76@gmail.com";
+//   if(email.contains("@")) {
+//     print("good email");
+//   } else {
+//     print("bad email");
+//   }
+
+  //SPLIT METHOD//
+//   String name = "Chigozie Okeke Obi";
+  
+//   var sname = name.split("");
+//   print(sname);
+  
+//   var fname = sname[0];
+//   print(fname);
+  
+//   var kname = sname[1];
+//   print(kname);
+  
+//   var lname = sname[2];
+//   print(lname);
+  
+  /*
+  ASSIGNMENTS
+  1. Run a loop to print out star shape in 6 rows
+  2. Write a function that capitalizes the first letter of a
+     String
+  */
+  
 // }
