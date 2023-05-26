@@ -276,7 +276,7 @@ Loop the multiplication table from 1 to 12
 //   print(bio["profile"]["name"]);
 //   print(bio["education"]["tertiary"]);
   
-//  List<dynamic> students = [
+//   List<Map<String, dynamic>> students = [
 //    {"Username": "Somtee", "Class": "SS3", "Password": 1234},
 //    {"Username": "Sylva", "Class": "SS2", "Password": 5678},
 //    {"Username": "Davies", "Class": "SS1", "Password": 9012},

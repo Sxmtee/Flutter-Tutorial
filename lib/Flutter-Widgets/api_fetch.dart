@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:carltutorial/Flutter-Widgets/api_dashboard.dart';
+import 'package:carltutorial/Flutter-Widgets/usermodel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -57,18 +59,31 @@ class _ApiFetchState extends State<ApiFetch> {
                 shrinkWrap: true,
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: NetworkImage(data[index]["avatar"]),
-                    ),
-                    title: Text(data[index]["first_name"]),
-                    subtitle: Text(data[index]["email"]),
-                  );
+                  return singleUser(
+                      User.fromJson([data][index] as Map<String, dynamic>));
                 },
               );
             }
           },
         ),
+      ),
+    );
+  }
+
+  Widget singleUser(User user) {
+    return GestureDetector(
+      onTap: () {
+        var route = MaterialPageRoute(
+          builder: (context) => ApiDashBoard(user: user),
+        );
+        Navigator.push(context, route);
+      },
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage(user.avatar),
+        ),
+        title: Text(user.firstName),
+        subtitle: Text(user.email),
       ),
     );
   }

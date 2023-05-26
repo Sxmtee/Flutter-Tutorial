@@ -4,7 +4,7 @@ import 'package:carltutorial/Sqflite-ToDo/model.dart';
 class UserDBHelper {
   static String tableName = "User";
 
-  //creates user & stores in the data
+  //creates user & stores the data in database
   Future<void> createUser(UserModel user) async {
     var database = await DataBaseHelper.instance.database;
     await database!.insert(tableName, user.toMap());
@@ -19,8 +19,8 @@ class UserDBHelper {
     List<UserModel> users = [];
 
     for (var element in list) {
-      var user = UserModel.fromMap(element);
-      users.add(user);
+      var person = UserModel.fromMap(element);
+      users.add(person);
     }
     return users;
   }
