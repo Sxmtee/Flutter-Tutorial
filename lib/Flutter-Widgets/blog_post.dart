@@ -28,8 +28,6 @@ class BlogPost extends StatelessWidget {
       color: Colors.red,
       child: Card(
         child: Container(
-          // margin: const EdgeInsets.all(50),
-          // color: Colors.purple,
           padding: const EdgeInsets.all(30),
           child: Column(
             children: [

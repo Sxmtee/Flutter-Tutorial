@@ -10,10 +10,15 @@ class SimpleDesign extends StatelessWidget {
         leading: const Icon(Icons.home), //left hand side
         title: const Text(
           "App Bar",
-          style: TextStyle(fontSize: 30, color: Colors.black),
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
-        actions: const [Icon(Icons.segment)], // right hand side
+        actions: const [
+          Icon(Icons.segment),
+        ], // right hand side
         elevation: 20,
         shadowColor: Colors.black,
       ),
@@ -22,7 +27,7 @@ class SimpleDesign extends StatelessWidget {
           //container gives you the child property
           //columns and rows give you the children property
           padding: const EdgeInsets.all(50),
-          child: Column(
+          child: Row(
             children: [
               Container(
                 height: 50,
@@ -33,20 +38,20 @@ class SimpleDesign extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                width: 50,
               ),
               Container(
                 height: 50,
                 width: 50,
-                color: Colors.red,
+                color: Colors.blue,
               ),
               const SizedBox(
-                height: 50,
+                width: 50,
               ),
               Container(
                 height: 50,
                 width: 50,
-                color: Colors.red,
+                color: Colors.amber,
               ),
             ],
           ),

@@ -53,6 +53,7 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.all(30),
+          width: double.infinity,
           child: Column(
             children: [
               //for simple design
