@@ -18,24 +18,19 @@ class _FormsState extends State<Forms> {
   List<String> qualifications = ["HND", "OND", "DEGREE", "MASTERS", "PHD"];
   var dropdown = "HND";
 
-  TextEditingController usernameCtrl = TextEditingController();
-  TextEditingController passwordCtrl = TextEditingController();
-  TextEditingController emailCtrl = TextEditingController();
+  final TextEditingController usernameCtrl = TextEditingController();
+  final TextEditingController passwordCtrl = TextEditingController();
+  final TextEditingController emailCtrl = TextEditingController();
 
   @override
   void dispose() {
-    super.dispose();
     usernameCtrl.dispose();
     passwordCtrl.dispose();
     emailCtrl.dispose();
+    super.dispose();
   }
 
   void switchPassword() {
-    // if (showPassword) {
-    //   showPassword = false;
-    // } else {
-    //   showPassword = true;
-    // }
     showPassword = !showPassword;
     setState(() {}); //notifies the state of a change...
   }
@@ -92,7 +87,7 @@ class _FormsState extends State<Forms> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     filled: true,
-                    fillColor: Colors.brown.shade200,
+                    fillColor: Colors.blue.shade200,
                     prefixIcon: const Icon(Icons.person),
                   ),
                   validator: (value) {
@@ -176,65 +171,61 @@ class _FormsState extends State<Forms> {
                 const SizedBox(
                   height: 20,
                 ),
-                Column(
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Radio(
-                          value: 1,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value!;
-                            });
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text("Male")
-                      ],
+                    Radio(
+                      value: 1,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value!;
+                        });
+                      },
                     ),
                     const SizedBox(
-                      height: 20,
+                      width: 10,
                     ),
-                    Row(
-                      children: [
-                        Radio(
-                          value: 2,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value!;
-                            });
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text("Female")
-                      ],
+                    const Text("Male")
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 2,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value!;
+                        });
+                      },
                     ),
                     const SizedBox(
-                      height: 20,
+                      width: 10,
                     ),
-                    Row(
-                      children: [
-                        Radio(
-                          value: 3,
-                          groupValue: gender,
-                          onChanged: (value) {
-                            setState(() {
-                              gender = value;
-                            });
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text("Others")
-                      ],
+                    const Text("Female")
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Radio(
+                      value: 3,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Text("Others")
                   ],
                 ),
                 const SizedBox(
