@@ -13,7 +13,7 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.userDetails['username'] + " 's Profile"),
+        title: Text(widget.userDetails['username'] + "'s Profile"),
       ),
       body: SingleChildScrollView(
         child: Container(

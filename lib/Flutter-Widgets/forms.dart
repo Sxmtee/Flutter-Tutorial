@@ -260,6 +260,11 @@ class _FormsState extends State<Forms> {
                       users["username"] = usernameCtrl.text;
                       users["password"] = passwordCtrl.text;
                       users["email"] = emailCtrl.text;
+                      if (gender == 0) {
+                        users["gender"] = "Male";
+                      } else {
+                        users["gender"] = "Female";
+                      }
                       var route = MaterialPageRoute(
                         builder: (context) => DashBoard(
                           userDetails: users,
