@@ -14,13 +14,12 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
     {"name": "Victor", "grade": "Pass"},
   ];
 
-  GlobalKey<FormState> authKey = GlobalKey<FormState>();
-  TextEditingController nameCtrl = TextEditingController();
-  TextEditingController gradeCtrl = TextEditingController();
+  final GlobalKey<FormState> authKey = GlobalKey<FormState>();
+  final TextEditingController nameCtrl = TextEditingController();
+  final TextEditingController gradeCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text("ListViewBuilder"),

@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class NotifDialog extends StatefulWidget {
+class NotifDialog extends StatelessWidget {
   const NotifDialog({super.key});
 
-  @override
-  State<NotifDialog> createState() => _NotifDialogState();
-}
-
-class _NotifDialogState extends State<NotifDialog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +44,6 @@ class _NotifDialogState extends State<NotifDialog> {
       ],
     );
     showDialog(
-      // barrierDismissible: false,
       context: context,
       builder: (context) => alertDialog,
     );
