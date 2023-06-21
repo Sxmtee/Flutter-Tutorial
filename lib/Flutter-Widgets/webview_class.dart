@@ -9,7 +9,7 @@ class WebViewClass extends StatefulWidget {
 }
 
 class _WebViewClassState extends State<WebViewClass> {
-  WebViewController controller = WebViewController()
+  WebViewController webcontroller = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted)
     ..setNavigationDelegate(
       NavigationDelegate(
@@ -27,7 +27,7 @@ class _WebViewClassState extends State<WebViewClass> {
         title: const Text("WebView Class"),
       ),
       body: WebViewWidget(
-        controller: controller,
+        controller: webcontroller,
       ),
     );
   }
