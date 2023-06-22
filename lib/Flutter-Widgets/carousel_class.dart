@@ -19,6 +19,7 @@ class _CarouselClassState extends State<CarouselClass> {
     'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
   ];
   CarouselController carouselController = CarouselController();
+  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,6 @@ class _CarouselClassState extends State<CarouselClass> {
             carouselController: carouselController,
             items: imgList.map((images) {
               return Container(
-                // height: 500,
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Image.network(
@@ -47,14 +47,21 @@ class _CarouselClassState extends State<CarouselClass> {
               enlargeCenterPage: true,
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 4),
+              onPageChanged: (index, reason) {
+                setState(() {
+                  pageIndex = index;
+                });
+              },
             ),
           ),
           const SizedBox(
             height: 10,
           ),
           CarouselIndicator(
+            color: Colors.blue,
+            activeColor: Colors.red,
             count: imgList.length,
-            index: null,
+            index: pageIndex,
           ),
         ],
       ),
