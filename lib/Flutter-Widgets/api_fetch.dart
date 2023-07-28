@@ -13,12 +13,12 @@ class ApiFetch extends StatefulWidget {
 }
 
 class _ApiFetchState extends State<ApiFetch> {
-  Future<List> fetchUser() async {
-    List results = [];
+  Future<Map<String, dynamic>> fetchUser() async {
+    Map<String, dynamic> results = {};
     var uri = Uri.parse("https://reqres.in/api/users?page=1");
     var response = await http.get(uri);
     if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
+      Map<String, dynamic> data = jsonDecode(response.body);
       results = data["data"];
     }
     return results;
@@ -54,13 +54,14 @@ class _ApiFetchState extends State<ApiFetch> {
                 child: Text("NO DATA"),
               );
             } else {
-              List data = snapshot.data as List;
+              Map<String, dynamic> data = snapshot.data as Map<String, dynamic>;
               return ListView.builder(
                 shrinkWrap: true,
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   return singleUser(
-                      User.fromJson([data][index] as Map<String, dynamic>));
+                    User.fromJson([data][index]),
+                  );
                 },
               );
             }
