@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:carltutorial/Flutter-Widgets/api_dashboard.dart';
+// import 'package:carltutorial/Flutter-Widgets/api_dashboard.dart';
 import 'package:carltutorial/Flutter-Widgets/usermodel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -74,10 +74,10 @@ class _ApiFetchState extends State<ApiFetch> {
   Widget singleUser(User user) {
     return GestureDetector(
       onTap: () {
-        var route = MaterialPageRoute(
-          builder: (context) => ApiDashBoard(user: user),
-        );
-        Navigator.push(context, route);
+        // var route = MaterialPageRoute(
+        //   builder: (context) => ApiDashBoard(user: user),
+        // );
+        // Navigator.push(context, route);
       },
       child: ListTile(
         leading: CircleAvatar(

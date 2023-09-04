@@ -26,12 +26,14 @@ class _AddScreenState extends State<AddScreen> {
         description: descripCtrl.text,
       ),
     )
-        .whenComplete(() {
-      var route = MaterialPageRoute(
-        builder: (context) => const ListScreen(),
-      );
-      Navigator.push(context, route);
-    });
+        .whenComplete(
+      () {
+        var route = MaterialPageRoute(
+          builder: (context) => const ListScreen(),
+        );
+        Navigator.push(context, route);
+      },
+    );
   }
 
   @override
