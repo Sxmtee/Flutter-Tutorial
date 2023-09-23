@@ -14,11 +14,11 @@ Tutorials on dart programming language & important widgets in flutter for newbie
 - Carousel Slider
 - Bottom Navigation Bar
 - SplashScreen
-- WebViewWidget
-- WebViewWidget Practical
 - Api Fetch
 - Api Post
 - Models
+- WebViewWidget
+- WebViewWidget Practical
 - SharedPreferences
 - Flutter SQFlite
   - Setup Sqflite
