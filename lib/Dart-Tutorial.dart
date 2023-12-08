@@ -365,5 +365,25 @@ Loop the multiplication table from 1 to 12
   2. Write a function that capitalizes the first letter of a
      String
   */
+
+
+//   String capitalizeWords(String input) {
+//   List<String> words = input.split(' ');
+
+  // for (int i = 0; i < words.length; i++) {
+  //   if (words[i].isNotEmpty) {
+  //     words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+  //   }
+  // }
+
+  // return words.join(' ');
+// }
+
+// void main() {
+//   String inputString = "ochiabutor somto";
+//   String result = capitalizeWords(inputString);
+//   print(result);
+// }
+
   
 // }
