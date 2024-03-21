@@ -15,11 +15,11 @@ class SimplePreferences {
     await _preferences.setInt("keyscore", score);
   }
 
-  static getScore() => _score;
-
   static Future setName(String name) async {
     await _preferences.setString("keyname", name);
   }
+
+  static getScore() => _score;
 
   static getName() => _name;
 }

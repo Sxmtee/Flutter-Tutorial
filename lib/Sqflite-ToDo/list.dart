@@ -1,7 +1,6 @@
 import 'package:carltutorial/Sqflite-ToDo/add.dart';
 import 'package:carltutorial/Sqflite-ToDo/model.dart';
 import 'package:carltutorial/Sqflite-ToDo/userdb_helper.dart';
-import 'package:carltutorial/main.dart';
 import 'package:flutter/material.dart';
 
 class ListScreen extends StatefulWidget {
@@ -15,12 +14,12 @@ class _ListScreenState extends State<ListScreen> {
   late UserDBHelper users;
   late Future<List<UserModel>> todo;
 
-  goback() {
-    var route = MaterialPageRoute(
-      builder: (context) => const Home(),
-    );
-    Navigator.push(context, route);
-  }
+  // goback() {
+  //   var route = MaterialPageRoute(
+  //     builder: (context) => const Home(),
+  //   );
+  //   Navigator.push(context, route);
+  // }
 
   @override
   void initState() {
@@ -39,7 +38,7 @@ class _ListScreenState extends State<ListScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        goback();
+        // goback();
         return false;
       },
       child: Scaffold(
@@ -63,13 +62,16 @@ class _ListScreenState extends State<ListScreen> {
               );
             } else {
               final items = snapshot.data;
+
               return RefreshIndicator(
                 onRefresh: onRefresh,
                 child: ListView.builder(
                   itemCount: items!.length,
                   itemBuilder: (context, index) {
+                    final user = items[index];
+
                     return Dismissible(
-                      key: ValueKey<int?>(items[index].id),
+                      key: ValueKey<int?>(user.id),
                       direction: DismissDirection.startToEnd,
                       background: Container(
                         color: Colors.red,
@@ -78,20 +80,14 @@ class _ListScreenState extends State<ListScreen> {
                         child: const Icon(Icons.delete_forever),
                       ),
                       onDismissed: (direction) async {
-                        await users.deleteUser((items[index].id) as int);
-                        setState(() {
-                          items.remove(items[index]);
-                        });
+                        await users.deleteUser((user.id)!);
+                        setState(() {});
                       },
                       child: Card(
                         child: ListTile(
                           contentPadding: const EdgeInsets.all(8.0),
-                          title: Text(
-                            (items[index].username) as String,
-                          ),
-                          subtitle: Text(
-                            (items[index].description) as String,
-                          ),
+                          title: Text((user.username)!),
+                          subtitle: Text((user.description)!),
                         ),
                       ),
                     );

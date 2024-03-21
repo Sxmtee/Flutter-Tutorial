@@ -31,18 +31,17 @@ class _CarouselClassState extends State<CarouselClass> {
         children: [
           CarouselSlider(
             carouselController: carouselController,
-            items: imgList.map((images) {
+            items: imgList.map((image) {
               return Container(
                 width: MediaQuery.of(context).size.width,
                 margin: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Image.network(
-                  images,
+                  image,
                   fit: BoxFit.fill,
                 ),
               );
             }).toList(),
             options: CarouselOptions(
-              initialPage: 0,
               height: 500,
               enlargeCenterPage: true,
               autoPlay: true,

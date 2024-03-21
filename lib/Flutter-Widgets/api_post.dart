@@ -13,11 +13,8 @@ class ApiPost extends StatefulWidget {
 class _ApiPostState extends State<ApiPost> {
   var formKey = GlobalKey<FormState>();
   String? name, occupation;
-  bool isLoading = false;
 
-  post() async {
-    isLoading = true;
-    setState(() {});
+  void post() async {
     var date = DateTime.now().toString();
     Map<String, dynamic> details = {};
     details["name"] = name;
@@ -87,21 +84,14 @@ class _ApiPostState extends State<ApiPost> {
                     occupation = value;
                   },
                 ),
-                isLoading
-                    ? const CircularProgressIndicator()
-                    : const SizedBox.shrink(),
                 const SizedBox(
                   height: 20,
                 ),
                 MaterialButton(
                   onPressed: () {
-                    isLoading = false;
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       post();
-                      setState(() {
-                        isLoading = false;
-                      });
                     }
                   },
                   color: Colors.blue,

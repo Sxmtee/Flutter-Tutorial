@@ -32,15 +32,13 @@ class _SplashScreenState extends State<SplashScreen> {
         color: Colors.brown,
         height: double.infinity,
         width: double.infinity,
-        child: const Column(
+        child: Column(
           children: [
-            Image(
-              image: AssetImage("Insert Your Image Here"),
-            ),
-            SizedBox(
+            Image.asset("assets/images/crypto.jpg"),
+            const SizedBox(
               height: 10,
             ),
-            CircularProgressIndicator(
+            const CircularProgressIndicator(
               color: Colors.blue,
             ),
           ],

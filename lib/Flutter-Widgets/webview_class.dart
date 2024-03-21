@@ -18,7 +18,7 @@ class _WebViewClassState extends State<WebViewClass> {
         },
       ),
     )
-    ..loadRequest(Uri.parse('https://jumia.com'));
+    ..loadRequest(Uri.parse('https://google.com'));
 
   @override
   Widget build(BuildContext context) {

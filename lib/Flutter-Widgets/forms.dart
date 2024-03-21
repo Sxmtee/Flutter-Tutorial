@@ -38,6 +38,7 @@ class _FormsState extends State<Forms> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Forms"),
@@ -260,11 +261,12 @@ class _FormsState extends State<Forms> {
                       users["username"] = usernameCtrl.text;
                       users["password"] = passwordCtrl.text;
                       users["email"] = emailCtrl.text;
-                      if (gender == 0) {
+                      if (gender == 1) {
                         users["gender"] = "Male";
                       } else {
                         users["gender"] = "Female";
                       }
+
                       var route = MaterialPageRoute(
                         builder: (context) => DashBoard(
                           userDetails: users,

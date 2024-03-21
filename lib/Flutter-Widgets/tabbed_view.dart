@@ -3,14 +3,9 @@ import 'package:carltutorial/Flutter-Widgets/blog_post.dart';
 import 'package:carltutorial/Flutter-Widgets/simple_design.dart';
 import 'package:flutter/material.dart';
 
-class TabbedViewClass extends StatefulWidget {
+class TabbedViewClass extends StatelessWidget {
   const TabbedViewClass({super.key});
 
-  @override
-  State<TabbedViewClass> createState() => _TabbedViewClassState();
-}
-
-class _TabbedViewClassState extends State<TabbedViewClass> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

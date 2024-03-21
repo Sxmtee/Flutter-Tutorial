@@ -13,6 +13,7 @@ class SimpleDesign extends StatelessWidget {
           style: TextStyle(
             fontSize: 30,
             color: Colors.black,
+            fontStyle: FontStyle.italic,
           ),
         ),
         centerTitle: true,
@@ -26,8 +27,11 @@ class SimpleDesign extends StatelessWidget {
         child: Container(
           //container gives you the child property
           //columns and rows give you the children property
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: Colors.black,
           padding: const EdgeInsets.all(50),
-          child: Row(
+          child: Column(
             children: [
               Container(
                 height: 50,
@@ -38,7 +42,7 @@ class SimpleDesign extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 50,
+                height: 50,
               ),
               Container(
                 height: 50,
@@ -46,7 +50,7 @@ class SimpleDesign extends StatelessWidget {
                 color: Colors.blue,
               ),
               const SizedBox(
-                width: 50,
+                height: 50,
               ),
               Container(
                 height: 50,

@@ -8,7 +8,7 @@ class ListViewBuilder extends StatefulWidget {
 }
 
 class _ListViewBuilderState extends State<ListViewBuilder> {
-  List<Map> names = [
+  List<Map<String, dynamic>> names = [
     {"name": "Somto", "grade": "Pass"},
     {"name": "Carl", "grade": "Pass"},
     {"name": "Victor", "grade": "Pass"},
@@ -34,20 +34,22 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
                 shrinkWrap: true,
                 itemCount: names.length,
                 itemBuilder: (context, index) {
+                  final students = names[index];
+
                   return Card(
                     elevation: 20,
                     shape: const StadiumBorder(),
                     child: ListTile(
                       leading: CircleAvatar(
                         child: Text(
-                          names[index]["name"].substring(0, 1),
+                          students["name"].substring(0, 1),
                         ),
                       ),
                       title: Text(
-                        names[index]["name"],
+                        students["name"],
                       ),
                       subtitle: Text(
-                        names[index]["grade"],
+                        students["grade"],
                       ),
                       trailing: IconButton(
                         onPressed: () {
