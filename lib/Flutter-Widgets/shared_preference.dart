@@ -9,8 +9,8 @@ class UserPreference extends StatefulWidget {
 }
 
 class _UserPreferenceState extends State<UserPreference> {
-  String name = "";
-  int counter = 0;
+  late String name;
+  late int counter;
 
   @override
   void initState() {
@@ -22,43 +22,45 @@ class _UserPreferenceState extends State<UserPreference> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextFormField(
-            initialValue: name,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "Your Name",
+      body: SafeArea(
+        child: Column(
+          children: [
+            TextFormField(
+              initialValue: name,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Your Name",
+              ),
+              onChanged: (value) {
+                setState(() {
+                  name = value;
+                });
+              },
             ),
-            onChanged: (value) {
-              setState(() {
-                name = value;
-              });
-            },
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-            },
-            child: Text("$counter"),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          MaterialButton(
-            onPressed: () async {
-              await SimplePreferences.setName(name);
-              await SimplePreferences.setScore(counter);
-            },
-            color: Colors.blue,
-            child: const Text("SAVE"),
-          ),
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              child: Text("$counter"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              onPressed: () async {
+                await SimplePreferences.setName(name);
+                await SimplePreferences.setScore(counter);
+              },
+              color: Colors.blue,
+              child: const Text("SAVE"),
+            ),
+          ],
+        ),
       ),
     );
   }

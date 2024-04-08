@@ -28,85 +28,89 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
         padding: const EdgeInsets.all(10),
         child: Form(
           key: authKey,
-          child: Column(
-            children: [
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: names.length,
-                itemBuilder: (context, index) {
-                  final students = names[index];
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: names.length,
+                  itemBuilder: (context, index) {
+                    final students = names[index];
+                    //names[index]["name"], names[index]["grade"]
 
-                  return Card(
-                    elevation: 20,
-                    shape: const StadiumBorder(),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        child: Text(
-                          students["name"].substring(0, 1),
+                    return Card(
+                      elevation: 20,
+                      shape: const StadiumBorder(),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          child: Text(
+                            students["name"].substring(0, 1),
+                          ),
+                        ),
+                        title: Text(
+                          students["name"],
+                        ),
+                        subtitle: Text(
+                          students["grade"],
+                        ),
+                        trailing: IconButton(
+                          onPressed: () {
+                            names.removeAt(index);
+                            setState(() {});
+                          },
+                          icon: const Icon(Icons.cancel),
                         ),
                       ),
-                      title: Text(
-                        students["name"],
-                      ),
-                      subtitle: Text(
-                        students["grade"],
-                      ),
-                      trailing: IconButton(
-                        onPressed: () {
-                          names.removeAt(index);
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.cancel),
-                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  controller: nameCtrl,
+                  decoration: InputDecoration(
+                    label: const Text("Name"),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                  );
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                controller: nameCtrl,
-                decoration: InputDecoration(
-                  label: const Text("Name"),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                controller: gradeCtrl,
-                decoration: InputDecoration(
-                  label: const Text("Grade"),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  controller: gradeCtrl,
+                  decoration: InputDecoration(
+                    label: const Text("Grade"),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              MaterialButton(
-                onPressed: () {
-                  if (authKey.currentState!.validate()) {
-                    authKey.currentState!.save();
-                    Map<String, dynamic> userdetails = {};
-                    userdetails["name"] = nameCtrl.text;
-                    userdetails["grade"] = gradeCtrl.text;
+                const SizedBox(
+                  height: 20,
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    if (authKey.currentState!.validate()) {
+                      authKey.currentState!.save();
+                      Map<String, dynamic> userdetails = {};
+                      userdetails["name"] = nameCtrl.text;
+                      userdetails["grade"] = gradeCtrl.text;
 
-                    names.add(userdetails);
-                    nameCtrl.clear();
-                    gradeCtrl.clear();
-                    setState(() {});
-                  }
-                },
-                color: Colors.brown,
-                child: const Text("Submit"),
-              ),
-            ],
+                      names.add(userdetails);
+                      nameCtrl.clear();
+                      gradeCtrl.clear();
+                      setState(() {});
+                    }
+                  },
+                  color: Colors.brown,
+                  child: const Text("Submit"),
+                ),
+              ],
+            ),
           ),
         ),
       ),

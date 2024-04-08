@@ -272,6 +272,7 @@ class _FormsState extends State<Forms> {
                           userDetails: users,
                         ),
                       );
+
                       Navigator.push(context, route);
                     }
                   },

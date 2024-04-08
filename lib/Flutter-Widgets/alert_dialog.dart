@@ -3,24 +3,6 @@ import 'package:flutter/material.dart';
 class NotifDialog extends StatelessWidget {
   const NotifDialog({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Alert Dialog"),
-      ),
-      body: Center(
-        child: MaterialButton(
-          onPressed: () {
-            exitApp(context);
-          },
-          color: Colors.amber,
-          child: const Text("Tap To Exit"),
-        ),
-      ),
-    );
-  }
-
   exitApp(BuildContext context) {
     AlertDialog alertDialog = AlertDialog(
       title: const Text("EXIT APP"),
@@ -43,9 +25,28 @@ class NotifDialog extends StatelessWidget {
         ),
       ],
     );
+
     showDialog(
       context: context,
       builder: (context) => alertDialog,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Alert Dialog"),
+      ),
+      body: Center(
+        child: MaterialButton(
+          onPressed: () {
+            exitApp(context);
+          },
+          color: Colors.amber,
+          child: const Text("Tap To Exit"),
+        ),
+      ),
     );
   }
 }
