@@ -33,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: double.infinity,
         width: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset("assets/images/crypto.jpg"),
             const SizedBox(
