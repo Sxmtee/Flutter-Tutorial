@@ -16,13 +16,13 @@ import 'package:carltutorial/Flutter-Widgets/webview_class.dart';
 import 'package:carltutorial/Flutter-Widgets/webview_practical.dart';
 import 'package:carltutorial/Sqflite-ToDo/db_helper.dart';
 import 'package:carltutorial/Sqflite-ToDo/list.dart';
-import 'package:carltutorial/meme_column.dart';
+import 'package:carltutorial/bouncing.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SimplePreferences.init();
-  // await DataBaseHelper.instance.database;
+  await DataBaseHelper.instance.database;
   runApp(const MyApp());
 }
 
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MemeColumn(),
+      home: const BouncingBallScreen(),
     );
   }
 }
