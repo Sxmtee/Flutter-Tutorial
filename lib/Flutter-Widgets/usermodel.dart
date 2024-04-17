@@ -13,13 +13,15 @@ class User {
     required this.avatar,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
-        id: json["id"],
-        email: json["email"] ?? "",
-        firstName: json["first_name"] ?? "",
-        lastName: json["last_name"] ?? "",
-        avatar: json["avatar"] ?? "",
-      );
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json["id"],
+      email: json["email"],
+      firstName: json["first_name"],
+      lastName: json["last_name"],
+      avatar: json["avatar"],
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "id": id,

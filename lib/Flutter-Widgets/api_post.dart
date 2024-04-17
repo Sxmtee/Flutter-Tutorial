@@ -12,16 +12,20 @@ class ApiPost extends StatefulWidget {
 
 class _ApiPostState extends State<ApiPost> {
   var formKey = GlobalKey<FormState>();
-  String? name, occupation;
+  TextEditingController nameCtrl = TextEditingController();
+  TextEditingController occupationCtrl = TextEditingController();
 
   void post() async {
     var date = DateTime.now().toString();
+
     Map<String, dynamic> details = {};
-    details["name"] = name;
-    details["occupation"] = occupation;
+    details["name"] = nameCtrl.text;
+    details["occupation"] = occupationCtrl.text;
     details["createdAt"] = date;
+
     var uri = Uri.parse("https://reqres.in/api/users?page=1");
     var request = await http.post(uri, body: details);
+
     if (request.statusCode == 201) {
       var response = jsonDecode(request.body);
       print(response);
@@ -47,7 +51,9 @@ class _ApiPostState extends State<ApiPost> {
             key: formKey,
             child: Column(
               children: [
+                ///for name
                 TextFormField(
+                  controller: nameCtrl,
                   decoration: InputDecoration(
                     label: const Text("Name"),
                     border: OutlineInputBorder(
@@ -60,14 +66,14 @@ class _ApiPostState extends State<ApiPost> {
                     }
                     return null;
                   },
-                  onSaved: (value) {
-                    name = value;
-                  },
                 ),
                 const SizedBox(
                   height: 20,
                 ),
+
+                ///for occupation
                 TextFormField(
+                  controller: occupationCtrl,
                   decoration: InputDecoration(
                     label: const Text("Occupation"),
                     border: OutlineInputBorder(
@@ -79,9 +85,6 @@ class _ApiPostState extends State<ApiPost> {
                       return "Please Fill This Field";
                     }
                     return null;
-                  },
-                  onSaved: (value) {
-                    occupation = value;
                   },
                 ),
                 const SizedBox(

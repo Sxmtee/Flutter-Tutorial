@@ -15,8 +15,8 @@ Tutorials on dart programming language & important widgets in flutter for newbie
 - Bottom Navigation Bar
 - SplashScreen
 - Api Fetch
-- Api Post
 - Models
+- Api Post
 - WebViewWidget
 - WebViewWidget Practical
 - SharedPreferences

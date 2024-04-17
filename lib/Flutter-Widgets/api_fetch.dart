@@ -15,19 +15,15 @@ class ApiFetch extends StatefulWidget {
 class _ApiFetchState extends State<ApiFetch> {
   Future<Map<String, dynamic>> fetchUser() async {
     Map<String, dynamic> results = {};
+
     var uri = Uri.parse("https://reqres.in/api/users?page=1");
     var response = await http.get(uri);
+
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
       results = data;
     }
     return results;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchUser();
   }
 
   @override
