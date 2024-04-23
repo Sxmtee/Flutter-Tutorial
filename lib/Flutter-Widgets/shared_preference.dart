@@ -32,21 +32,18 @@ class _UserPreferenceState extends State<UserPreference> {
                 hintText: "Your Name",
               ),
               onChanged: (value) {
-                setState(() {
-                  name = value;
-                });
+                name = value;
               },
             ),
             const SizedBox(
               height: 20,
             ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  counter++;
-                });
-              },
-              child: Text("$counter"),
+            Row(
+              children: [
+                //decrement button
+                Text("$counter"),
+                //increment button
+              ],
             ),
             const SizedBox(
               height: 20,

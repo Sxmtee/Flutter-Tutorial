@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 
-class DashBoard extends StatefulWidget {
+class DashBoard extends StatelessWidget {
   final Map<String, dynamic> userDetails;
   const DashBoard({super.key, required this.userDetails});
 
   @override
-  State<DashBoard> createState() => _DashBoardState();
-}
-
-class _DashBoardState extends State<DashBoard> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.userDetails['username'] + "'s Profile"),
+        title: Text(userDetails['username'] + "'s Profile"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -28,7 +23,7 @@ class _DashBoardState extends State<DashBoard> {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(widget.userDetails['username'])
+                  Text(userDetails['username'])
                 ],
               ),
               const SizedBox(
@@ -40,7 +35,7 @@ class _DashBoardState extends State<DashBoard> {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(widget.userDetails['password'])
+                  Text(userDetails['password'])
                 ],
               ),
               const SizedBox(
@@ -52,7 +47,7 @@ class _DashBoardState extends State<DashBoard> {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(widget.userDetails['email'])
+                  Text(userDetails['email'])
                 ],
               ),
             ],

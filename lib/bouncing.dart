@@ -14,6 +14,10 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
   double ballSpeedY = 2.0;
   double ballSize = 50.0;
 
+  double paddlePositionX = 0.0;
+  double paddleWidth = 100.0;
+  double paddleHeight = 20.0;
+
   @override
   void initState() {
     super.initState();
@@ -22,24 +26,37 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
 
   void animateBall() {
     setState(() {
-      // Update ball position
+      //Update ball position
       ballPositionX += ballSpeedX;
       ballPositionY += ballSpeedY;
 
-      // Check for collision with screen edges
+      //check for collision with screen edges
       if (ballPositionX <= 0 ||
           ballPositionX >= MediaQuery.of(context).size.width - ballSize) {
         ballSpeedX *= -1;
       }
-      if (ballPositionY <= 0 ||
-          ballPositionY >= MediaQuery.of(context).size.height - ballSize) {
+      if (ballPositionY <= 0) {
         ballSpeedY *= -1;
       }
-    });
+      if (ballPositionY >= MediaQuery.of(context).size.height - ballSize) {
+        ballPositionX = 50.0;
+        ballPositionY = 50.0;
+        ballSpeedX = 2.0;
+        ballSpeedY = 2.0;
+      }
 
-    // Call this function again after a short delay
-    Future.delayed(const Duration(milliseconds: 10), () {
-      animateBall();
+      // Check for collision with paddle
+      if (ballPositionY + ballSize >=
+              MediaQuery.of(context).size.height - paddleHeight &&
+          ballPositionX + ballSize >= paddlePositionX &&
+          ballPositionX <= paddlePositionX + paddleWidth) {
+        ballSpeedY *= -1;
+      }
+
+      //call this function again after a short delay
+      Future.delayed(const Duration(milliseconds: 10), () {
+        animateBall();
+      });
     });
   }
 
@@ -50,10 +67,15 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
         title: const Text('Bouncing Ball'),
       ),
       body: GestureDetector(
-        onTap: () {
+        onHorizontalDragUpdate: (details) {
           setState(() {
-            ballSpeedX *= -1;
-            ballSpeedY *= -1;
+            paddlePositionX = details.globalPosition.dx - paddleWidth / 2;
+            if (paddlePositionX < 0) {
+              paddlePositionX = 0;
+            } else if (paddlePositionX >
+                MediaQuery.of(context).size.width - paddleWidth) {
+              paddlePositionX = MediaQuery.of(context).size.width - paddleWidth;
+            }
           });
         },
         child: AnimatedContainer(
@@ -64,31 +86,29 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
           child: Stack(
             children: [
               Positioned(
-                left: ballPositionX,
                 top: ballPositionY,
+                left: ballPositionX,
                 child: Container(
-                  width: ballSize,
                   height: ballSize,
+                  width: ballSize,
                   decoration: const BoxDecoration(
-                    color: Colors.red,
                     shape: BoxShape.circle,
+                    color: Colors.green,
                   ),
                 ),
               ),
+              Positioned(
+                bottom: 0,
+                left: paddlePositionX,
+                child: Container(
+                  height: paddleHeight,
+                  width: paddleWidth,
+                  color: Colors.blue,
+                ),
+              )
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            ballPositionX = 50.0;
-            ballPositionY = 50.0;
-            ballSpeedX = 2.0;
-            ballSpeedY = 2.0;
-          });
-        },
-        child: const Icon(Icons.refresh),
       ),
     );
   }

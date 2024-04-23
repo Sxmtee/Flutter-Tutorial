@@ -26,14 +26,12 @@ class _AddScreenState extends State<AddScreen> {
         description: descripCtrl.text,
       ),
     )
-        .whenComplete(
-      () {
-        var route = MaterialPageRoute(
-          builder: (context) => const ListScreen(),
-        );
-        Navigator.push(context, route);
-      },
-    );
+        .whenComplete(() {
+      var route = MaterialPageRoute(
+        builder: (context) => const ListScreen(),
+      );
+      Navigator.push(context, route);
+    });
   }
 
   @override
@@ -65,7 +63,7 @@ class _AddScreenState extends State<AddScreen> {
                 controller: descripCtrl,
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter some text';
+                    return 'Please enter your description';
                   }
                   return null;
                 },

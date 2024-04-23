@@ -12,11 +12,12 @@ class UserDBHelper {
 
   //gets user from database
   Future<List<UserModel>> getUsers() async {
+    List<UserModel> users = [];
+
     var database = await DataBaseHelper.instance.database;
+
     List<Map<String, dynamic>> list =
         await database!.rawQuery("SELECT * FROM $tableName");
-
-    List<UserModel> users = [];
 
     for (var element in list) {
       var person = UserModel.fromMap(element);

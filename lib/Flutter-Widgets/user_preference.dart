@@ -11,8 +11,8 @@ class SimplePreferences {
     _name = _preferences.getString('keyname') ?? '';
   }
 
-  static Future setScore(int score) async {
-    await _preferences.setInt("keyscore", score);
+  static Future setScore(int num) async {
+    await _preferences.setInt("keyscore", num);
   }
 
   static Future setName(String name) async {
