@@ -70,24 +70,18 @@ class _ListScreenState extends State<ListScreen> {
                   itemBuilder: (context, index) {
                     final user = items[index];
 
-                    return Dismissible(
-                      key: ValueKey<int?>(user.id),
-                      direction: DismissDirection.startToEnd,
-                      background: Container(
-                        color: Colors.red,
-                        alignment: Alignment.centerRight,
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: const Icon(Icons.delete_forever),
-                      ),
-                      onDismissed: (direction) async {
-                        await users.deleteUser((user.id)!);
-                        setState(() {});
-                      },
-                      child: Card(
-                        child: ListTile(
-                          contentPadding: const EdgeInsets.all(8.0),
-                          title: Text((user.username)!),
-                          subtitle: Text((user.description)!),
+                    return Card(
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.all(8.0),
+                        title: Text((user.username)!),
+                        subtitle: Text((user.description)!),
+                        trailing: IconButton(
+                          onPressed: () {
+                            users.deleteUser((user.id)!);
+                            setState(() {});
+                            onRefresh();
+                          },
+                          icon: const Icon(Icons.delete),
                         ),
                       ),
                     );

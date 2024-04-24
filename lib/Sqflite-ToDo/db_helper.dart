@@ -17,9 +17,13 @@ class DataBaseHelper {
     return _database;
   }
 
+  //Initializes the database in your phone
   Future<Database> _initDatabase() async {
-    final dbPath = await getDatabasesPath();
-    String path = join(dbPath, _databaseName);
+    final dbPath =
+        await getDatabasesPath(); //creates a path(folder) for the database in your phone
+    String path = join(dbPath, _databaseName); // joins the path & databaseName
+
+    //opens the database
     return await openDatabase(
       path,
       version: _databaseVersion,
@@ -27,6 +31,7 @@ class DataBaseHelper {
     );
   }
 
+  //creates your database table
   Future _onCreate(Database db, int version) async {
     await db.execute(
       "CREATE TABLE User(id INTEGER PRIMARY KEY, username TEXT, description TEXT)",

@@ -12,6 +12,8 @@ class _UserPreferenceState extends State<UserPreference> {
   late String name;
   late int counter;
 
+  // final preference = SimplePreferences();
+
   @override
   void initState() {
     name = SimplePreferences.getName();
