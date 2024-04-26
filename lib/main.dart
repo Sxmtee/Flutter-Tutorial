@@ -14,14 +14,15 @@ import 'package:carltutorial/Flutter-Widgets/tabbed_view.dart';
 import 'package:carltutorial/Flutter-Widgets/user_preference.dart';
 import 'package:carltutorial/Flutter-Widgets/webview_class.dart';
 import 'package:carltutorial/Flutter-Widgets/webview_practical.dart';
-import 'package:carltutorial/Sqflite-ToDo/db_helper.dart';
+// import 'package:carltutorial/Sqflite-ToDo/db_helper.dart';
 import 'package:carltutorial/Sqflite-ToDo/list.dart';
+import 'package:carltutorial/bouncing.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SimplePreferences.init();
-  await DataBaseHelper.instance.database;
+  // await DataBaseHelper.instance.database;
   runApp(const MyApp());
 }
 
@@ -32,11 +33,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Carl Tutorial',
+      title: 'Flutter Tutorial',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ListScreen(),
+      home: const BouncingBallScreen(),
     );
   }
 }

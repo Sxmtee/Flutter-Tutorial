@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class BouncingBallScreen extends StatefulWidget {
@@ -16,7 +18,11 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
 
   double paddlePositionX = 0.0;
   double paddleWidth = 100.0;
-  double paddleHeight = 20.0;
+  double paddleHeight = 50.0;
+
+  int gamescore = 0;
+
+  double appBarHeight = 80;
 
   @override
   void initState() {
@@ -43,17 +49,20 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
         ballPositionY = 50.0;
         ballSpeedX = 2.0;
         ballSpeedY = 2.0;
+        gamescore = 0;
       }
 
       // Check for collision with paddle
       if (ballPositionY + ballSize >=
-              MediaQuery.of(context).size.height - paddleHeight &&
-          ballPositionX + ballSize >= paddlePositionX &&
-          ballPositionX <= paddlePositionX + paddleWidth) {
+              MediaQuery.of(context).size.height -
+                  appBarHeight -
+                  paddleHeight &&
+          (ballPositionX + ballSize >= paddlePositionX &&
+              ballPositionX <= paddlePositionX + paddleWidth)) {
+        gamescore += 5;
         ballSpeedY *= -1;
       }
 
-      //call this function again after a short delay
       Future.delayed(const Duration(milliseconds: 10), () {
         animateBall();
       });
@@ -64,7 +73,28 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: appBarHeight,
         title: const Text('Bouncing Ball'),
+        centerTitle: false,
+        actions: [
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              color: Colors.pink.shade400,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Center(
+              child: Text(
+                "$gamescore",
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: GestureDetector(
         onHorizontalDragUpdate: (details) {
@@ -103,7 +133,7 @@ class _BouncingBallScreenState extends State<BouncingBallScreen> {
                 child: Container(
                   height: paddleHeight,
                   width: paddleWidth,
-                  color: Colors.blue,
+                  color: Colors.blue.withOpacity(0.5),
                 ),
               )
             ],
